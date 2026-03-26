@@ -62,7 +62,7 @@ export default function Navbar() {
           onClick={() => scrollToSection('contact')}
           className="hidden sm:block button-primary"
         >
-          Partner With Us
+          Place Your Order
         </motion.button>
 
         {/* Mobile Menu Button */}
@@ -99,7 +99,7 @@ export default function Navbar() {
               onClick={() => scrollToSection('contact')}
               className="w-full button-primary"
             >
-              Partner With Us
+              Place Your Order
             </motion.button>
           </div>
         </motion.div>

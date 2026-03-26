@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react'
 import SectionWrapper from '../components/SectionWrapper'
 
 interface FormData {
   name: string
   email: string
-  subject: string
+  company: string
   message: string
 }
 
@@ -14,7 +14,7 @@ export default function ContactSection() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
-    subject: '',
+    company: '',
     message: '',
   })
   const [errors, setErrors] = useState<Partial<FormData>>({})
@@ -32,8 +32,8 @@ export default function ContactSection() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Invalid email format'
     }
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required'
+    if (!formData.company.trim()) {
+      newErrors.company = 'Company/Business name is required'
     }
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required'
@@ -67,7 +67,7 @@ export default function ContactSection() {
       await new Promise((resolve) => setTimeout(resolve, 2000))
 
       setIsSubmitted(true)
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      setFormData({ name: '', email: '', company: '', message: '' })
 
       // Reset success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000)
@@ -88,7 +88,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+91 - your contact here',
+      value: '+91 - Contact for details',
       link: 'tel:+91...',
     },
     {
@@ -100,24 +100,38 @@ export default function ContactSection() {
   ]
 
   return (
-    <SectionWrapper id="contact" className="bg-gradient-to-b from-slate-900/30 to-slate-800/50">
+    <SectionWrapper id="contact" className="bg-gradient-to-b from-slate-900/30 to-slate-800/50 relative overflow-hidden">
+      {/* Export business background with order/shipping theme */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-0">
+        <motion.div
+          animate={{ opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 5, repeat: Infinity }}
+          className="absolute top-20 right-1/3 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ opacity: [0.08, 0.15, 0.08] }}
+          transition={{ duration: 7, repeat: Infinity, delay: 2 }}
+          className="absolute -bottom-40 left-10 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl"
+        />
+      </div>
+
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-16"
+        className="text-center mb-16 relative z-10"
       >
-        <span className="text-blue-400 font-semibold text-lg">Get In Touch</span>
-        <h2 className="heading-md mt-4 bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent">
-          Partner With Vantage & Company
+        <span className="text-blue-400 font-semibold text-lg">Export Order</span>
+        <h2 className="heading-md mt-4 bg-gradient-to-r from-blue-300 to-indigo-400 bg-clip-text text-transparent">
+          Request Your Bulk Order
         </h2>
-        <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
-          Ready to transform your business? We'd love to hear from you. Send us a message and let's start a conversation.
+        <p className="text-gray-400 text-lg mt-4 max-w-3xl mx-auto">
+          Contact our export team to discuss your order requirements, MOQ (Minimum Order Quantity), pricing, shipping options, and delivery timelines. Professional service for serious buyers.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 relative z-10">
         {/* Contact Methods */}
         {contactMethods.map((method, idx) => {
           const Icon = method.icon
@@ -136,8 +150,8 @@ export default function ContactSection() {
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 className="mb-4 inline-block"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-xl flex items-center justify-center">
-                  <Icon size={28} className="text-blue-400 group-hover:text-purple-400 transition-colors" />
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500/30 to-indigo-500/30 rounded-xl flex items-center justify-center">
+                  <Icon size={28} className="text-blue-400 group-hover:text-indigo-300 transition-colors" />
                 </div>
               </motion.div>
               <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
@@ -154,7 +168,7 @@ export default function ContactSection() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="glass-effect p-8 md:p-12 rounded-2xl max-w-2xl mx-auto"
+        className="glass-effect p-8 md:p-12 rounded-2xl max-w-2xl mx-auto relative z-10"
       >
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name */}
@@ -213,30 +227,30 @@ export default function ContactSection() {
             )}
           </motion.div>
 
-          {/* Subject */}
+          {/* Company */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <label className="block text-white font-semibold mb-2">Subject *</label>
+            <label className="block text-white font-semibold mb-2">Company/Business Name *</label>
             <input
               type="text"
-              name="subject"
-              value={formData.subject}
+              name="company"
+              value={formData.company}
               onChange={handleChange}
-              placeholder="What is this about?"
+              placeholder="Your company name"
               className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 transition-colors ${
-                errors.subject ? 'border-red-500' : 'border-white/20'
+                errors.company ? 'border-red-500' : 'border-white/20'
               }`}
             />
-            {errors.subject && (
+            {errors.company && (
               <motion.p
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="text-red-400 text-sm mt-2"
               >
-                {errors.subject}
+                {errors.company}
               </motion.p>
             )}
           </motion.div>
@@ -247,12 +261,12 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.25 }}
           >
-            <label className="block text-white font-semibold mb-2">Message *</label>
+            <label className="block text-white font-semibold mb-2">Order Details & Requirements *</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell us more about your requirements..."
+              placeholder="Describe your product needs, quantities, and delivery timeline..."
               rows={5}
               className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 transition-colors resize-none ${
                 errors.message ? 'border-red-500' : 'border-white/20'
@@ -276,7 +290,7 @@ export default function ContactSection() {
               animate={{ opacity: 1, scale: 1 }}
               className="p-4 bg-green-500/20 border border-green-400/50 rounded-lg text-green-300"
             >
-              ✓ Thank you! We've received your message and will get back to you soon.
+              ✓ Thank you! We've received your inquiry and will contact you shortly with pricing and availability details.
             </motion.div>
           )}
 
@@ -298,12 +312,12 @@ export default function ContactSection() {
                   transition={{ duration: 1, repeat: Infinity }}
                   className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                 />
-                Sending...
+                Processing...
               </>
             ) : (
               <>
-                <Send size={20} />
-                Send Message
+                <MessageCircle size={20} />
+                Submit Order Inquiry
               </>
             )}
           </motion.button>

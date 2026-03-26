@@ -8,7 +8,41 @@
   }
 
   body {
-    @apply bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white;
+    @apply bg-gradient-export text-white;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  /* Export business background pattern with shipping/logistics theme */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Subtle shipping container pattern overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      repeating-linear-gradient(90deg, rgba(59, 130, 246, 0.02) 0px, rgba(59, 130, 246, 0.02) 1px, transparent 1px, transparent 100px),
+      repeating-linear-gradient(0deg, rgba(99, 102, 241, 0.02) 0px, rgba(99, 102, 241, 0.02) 1px, transparent 1px, transparent 100px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
   }
 }
 
@@ -30,7 +64,7 @@
   }
 
   .button-primary {
-    @apply px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    @apply px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-blue-500/30;
   }
 
   .button-secondary {
@@ -38,15 +72,44 @@
   }
 
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
   }
 
   .glass-effect-lg {
-    @apply bg-white/[0.05] backdrop-blur-2xl border border-white/10 rounded-2xl;
+    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/5 rounded-2xl;
   }
 
   .fade-in {
     @apply animate-fade-in;
+  }
+
+  /* Export business card styles with shipping container aesthetic */
+  .export-card {
+    @apply glass-effect p-6 md:p-8 rounded-2xl transition-all duration-300 hover:border-blue-400/50 hover:bg-blue-500/5 hover:shadow-lg hover:shadow-blue-500/20;
+    border-left: 3px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .export-card:hover {
+    border-left-color: rgba(59, 130, 246, 0.7);
+  }
+
+  /* Shipping/Logistics section background */
+  .shipping-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shipping-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
   }
 }
 
@@ -65,14 +128,53 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(15, 23, 42, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.5);
+  background: rgba(59, 130, 246, 0.6);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.7);
+  background: rgba(59, 130, 246, 0.8);
 }
+
+/* Professional export business overlay */
+.export-overlay {
+  position: relative;
+}
+
+.export-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 54, 93, 0.1) 0%, rgba(45, 55, 72, 0.05) 100%);
+  pointer-events: none;
+}
+
+/* Cargo/Container theme - darker professional look */
+.cargo-section {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(26, 42, 73, 0.6) 100%);
+  position: relative;
+}
+
+.cargo-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(59, 130, 246, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(59, 130, 246, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(59, 130, 246, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(59, 130, 246, 0.03) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+

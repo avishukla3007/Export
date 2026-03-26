@@ -109,8 +109,42 @@ export default function Footer() {
             whileHover={{ scale: 1.05 }}
             className="button-primary"
           >
-            Get in Touch
+            Place Your Order
           </motion.button>
+        </motion.div>
+
+        {/* Founder Details */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-400/30 rounded-xl p-6 md:p-8 mb-8"
+        >
+          <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+            <span className="text-2xl">👤</span> Founder & Vision
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-blue-300 font-semibold mb-2">Founder</p>
+              <p className="text-white text-lg font-bold mb-4">Aviral Shukla</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Aviral Shukla is the founder and driving force behind Vantage & Company. With a passion for sustainable agriculture and global trade, Aviral has built this company to bridge India's agricultural excellence with international markets.
+              </p>
+            </div>
+            <div>
+              <p className="text-blue-300 font-semibold mb-2">Direct Contact</p>
+              <a
+                href="mailto:Vantageandcompany@gmail.com"
+                className="text-white font-semibold hover:text-blue-400 transition-colors mb-4 flex items-center gap-2"
+              >
+                <Mail size={18} className="text-blue-400" />
+                Vantageandcompany@gmail.com
+              </a>
+              <p className="text-gray-400 text-sm mt-4">
+                Connect directly with Aviral to discuss strategic opportunities, large orders, or partnerships.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Bottom Bar */}

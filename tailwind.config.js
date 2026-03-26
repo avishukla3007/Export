@@ -24,7 +24,8 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-organic': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #0f172a 0%, #1a202c 100%)',
+        'gradient-export': 'linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #1a202c 100%)',
       },
       backdropFilter: {
         'glass': 'backdrop-filter blur(10px) saturate(180%)',
@@ -37,3 +38,4 @@ export default {
   },
   plugins: [],
 }
+

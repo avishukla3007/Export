@@ -3,11 +3,11 @@ import Navbar from './components/Navbar'
 import HeroSection from './sections/HeroSection'
 import AboutSection from './sections/AboutSection'
 import ProductsSection from './sections/ProductsSection'
-import WhyChooseUsSection from './sections/WhyChooseUsSection'
+import CompanyInfoSection from './sections/CompanyInfoSection'
 import MarketOpportunitySection from './sections/MarketOpportunitySection'
 import ProcessSection from './sections/ProcessSection'
 import SustainabilitySection from './sections/SustainabilitySection'
-import TestimonialsSection from './sections/TestimonialsSection'
+import BuyerBenefitsSection from './sections/BuyerBenefitsSection'
 import ContactSection from './sections/ContactSection'
 import Footer from './components/Footer'
 import LoadingAnimation from './components/LoadingAnimation'
@@ -30,11 +30,11 @@ function App() {
       <HeroSection />
       <AboutSection />
       <ProductsSection />
-      <WhyChooseUsSection />
+      <CompanyInfoSection />
       <MarketOpportunitySection />
       <ProcessSection />
       <SustainabilitySection />
-      <TestimonialsSection />
+      <BuyerBenefitsSection />
       <ContactSection />
       <Footer />
     </div>

@@ -1,0 +1,94 @@
+/* Export/Logistics Background Images */
+/* This file provides background image integration for export business aesthetic */
+
+/* Hero Section - Cargo Routes Theme */
+.hero-section-bg {
+  background-image: 
+    linear-gradient(135deg, rgba(26, 54, 93, 0.75) 0%, rgba(15, 23, 42, 0.8) 100%),
+    url('/images/cargo-ship.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Products Section - Global Container Theme */
+.products-section-bg {
+  background-image: 
+    linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(26, 42, 73, 0.75) 100%),
+    url('/images/container-world.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Process Section - Logistics Network Theme */
+.process-section-bg {
+  background-image: 
+    linear-gradient(135deg, rgba(20, 30, 50, 0.85) 0%, rgba(26, 54, 93, 0.75) 100%),
+    url('/images/logistics-warehouse.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contact Section - Supply Chain Theme */
+.contact-section-bg {
+  background-image: 
+    linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(20, 30, 50, 0.8) 100%),
+    url('/images/supply-chain-map.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Alternative patterns when images are not available */
+.shipping-pattern {
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(59, 130, 246, 0.03) 0px, rgba(59, 130, 246, 0.03) 2px, transparent 2px, transparent 50px),
+    repeating-linear-gradient(-45deg, rgba(99, 102, 241, 0.03) 0px, rgba(99, 102, 241, 0.03) 2px, transparent 2px, transparent 50px);
+}
+
+/* Container styling overlay */
+.container-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(90deg, transparent 24%, rgba(59, 130, 246, 0.02) 25%, rgba(59, 130, 246, 0.02) 26%, transparent 27%, transparent 74%, rgba(59, 130, 246, 0.02) 75%, rgba(59, 130, 246, 0.02) 76%, transparent 77%, transparent),
+    linear-gradient(0deg, transparent 24%, rgba(59, 130, 246, 0.02) 25%, rgba(59, 130, 246, 0.02) 26%, transparent 27%, transparent 74%, rgba(59, 130, 246, 0.02) 75%, rgba(59, 130, 246, 0.02) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* Shipping lane lines animation */
+@keyframes shipping-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.shipping-lane {
+  animation: shipping-pulse 3s infinite;
+}
+
+/* Cargo theme - professional dark styling */
+.cargo-bg {
+  background: linear-gradient(135deg, rgba(20, 30, 50, 0.9) 0%, rgba(26, 54, 93, 0.85) 50%, rgba(15, 23, 42, 0.9) 100%);
+  position: relative;
+}
+
+/* Image Integration Guide:
+ * 1. Place your export/logistics images in /public/images/ folder:
+ *    - cargo-ship.jpg (Hero section)
+ *    - container-world.jpg (Products section)  
+ *    - logistics-warehouse.jpg (Process section)
+ *    - supply-chain-map.jpg (Contact section)
+ * 
+ * 2. Apply classes to sections:
+ *    <section className="hero-section-bg">
+ *    <section className="products-section-bg">
+ *    etc.
+ * 
+ * 3. Adjust overlay opacity in gradient if images need more or less visibility
+ *    Change rgba values (last number) for opacity control
+ */
