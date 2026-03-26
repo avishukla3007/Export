@@ -6,8 +6,8 @@ export default function AboutSection() {
   const highlights = [
     {
       icon: Leaf,
-      title: 'Premium Sourcing',
-      description: 'Directly from certified farms across India',
+      title: 'Quality Sourcing',
+      description: 'From certified suppliers with compliance standards',
     },
     {
       icon: Globe,
@@ -45,11 +45,11 @@ export default function AboutSection() {
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            Vantage & Company is a leading export company specializing in India's finest agricultural products. With deep roots in sustainable farming and a commitment to excellence, we connect India's heritage with global buyers who value premium quality and authenticity.
+            Vantage & Company is a professional agricultural export company specializing in premium spices, herbal products, and nutraceuticals from certified suppliers. We maintain strict quality control and international compliance standards for all exports.
           </p>
 
           <p className="text-gray-400 text-base leading-relaxed">
-            Our mission is to empower Indian farmers while delivering world-class products to discerning international customers. Every product tells a story of dedication, sustainability, and unwavering quality standards.
+            Our focus is on delivering reliable, high-quality agricultural products to professional international buyers. We source from certified suppliers, ensure rigorous testing, and provide transparent documentation for all exports.
           </p>
         </motion.div>
 

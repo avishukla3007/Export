@@ -12,7 +12,7 @@ export default function BuyerBenefitsSection() {
     {
       icon: ShieldCheck,
       title: 'Complete Traceability',
-      description: 'Every product source verified with transparent documentation from farm to your warehouse.',
+      description: 'Every product source verified with complete compliance documentation and quality certificates.',
     },
     {
       icon: Truck,

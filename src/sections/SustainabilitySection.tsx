@@ -6,9 +6,9 @@ export default function SustainabilitySection() {
   const initiatives = [
     {
       icon: Heart,
-      title: 'Farmers First',
-      description: 'Fair compensation, capacity building, and long-term partnerships empower our farming communities.',
-      benefits: ['Fair Wages', 'Education', 'Healthcare Support', 'Emergency Fund'],
+      title: 'Professional Standards',
+      description: 'Ethical sourcing practices and professional partnerships with certified suppliers.',
+      benefits: ['Ethical Sourcing', 'Fair Practices', 'Compliance', 'Transparency'],
     },
     {
       icon: Leaf,
@@ -112,10 +112,10 @@ export default function SustainabilitySection() {
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
-            { stat: '100%', label: 'Organic Certified' },
-            { stat: '5000+', label: 'Farmers Supported' },
-            { stat: '50K', label: 'Tons Carbon Saved' },
-            { stat: '30%', label: 'Water Conserved' },
+            { stat: 'ISO', label: 'Quality Certified' },
+            { stat: 'FSSAI', label: 'Approved' },
+            { stat: '100%', label: 'Testing Compliance' },
+            { stat: '50+', label: 'Products Available' },
           ].map((item, idx) => (
             <motion.div
               key={idx}

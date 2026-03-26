@@ -7,9 +7,9 @@ export default function ProcessSection() {
     {
       number: '01',
       icon: Sprout,
-      title: 'Farm Sourcing',
-      description: 'Direct partnerships with certified farms for premium quality assurance.',
-      highlights: ['Organic Farms', 'Fair Trade', 'Sustainable Practices'],
+      title: 'Supplier Verification',
+      description: 'Certified suppliers meeting international quality and compliance standards.',
+      highlights: ['Compliance Check', 'Quality Verification', 'Documentation'],
     },
     {
       number: '02',

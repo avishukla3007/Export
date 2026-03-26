@@ -52,6 +52,22 @@ export default function HeroSection() {
       </div>
 
       <div className="section-container flex flex-col items-center text-center relative z-10">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 md:mb-12"
+        >
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/50">
+              <span className="text-white font-bold text-xl">V&C</span>
+            </div>
+            <span className="text-xl font-bold text-white">Vantage & Company</span>
+          </div>
+          <p className="text-blue-400 text-sm mt-2 font-medium">Premium Export Solutions</p>
+        </motion.div>
+
         {/* Subheading with export business focus */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -60,7 +76,7 @@ export default function HeroSection() {
           className="mb-6 md:mb-8"
         >
           <span className="inline-block px-4 py-2 bg-blue-600/30 border border-blue-400/60 rounded-full text-blue-300 text-sm md:text-base font-medium">
-            🌍 Global Agricultural Export Solutions
+            � Spices • Herbals • Nutraceuticals
           </span>
         </motion.div>
 
@@ -117,9 +133,9 @@ export default function HeroSection() {
           className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full max-w-4xl"
         >
           {[
-            { icon: Globe, text: '50+ Countries Served', subtext: 'Global Reach', color: 'text-blue-400' },
-            { icon: Award, text: '500+ Verified Buyers', subtext: 'Trusted Partners', color: 'text-indigo-400' },
-            { icon: Truck, text: '10K+ Shipments', subtext: 'Proven Excellence', color: 'text-blue-300' },
+            { icon: Award, text: 'ISO Certified', subtext: 'Quality Standards', color: 'text-blue-400' },
+            { icon: Globe, text: 'Export Ready', subtext: 'Fast Processing', color: 'text-indigo-400' },
+            { icon: Truck, text: 'Professional Service', subtext: 'Expert Team', color: 'text-blue-300' },
           ].map((item, idx) => {
             const Icon = item.icon
             return (

@@ -10,7 +10,7 @@ export default function ProductsSection() {
       title: 'Premium Spices',
       icon: Package,
       items: ['Turmeric Powder', 'Cardamom (Green/Black)', 'Cumin Seeds', 'Black Pepper', 'Coriander Seeds', 'Fenugreek Seeds'],
-      description: 'Hand-selected, premium-grade spices sourced directly from certified farms with international quality standards.',
+      description: 'Premium-grade spices from certified suppliers meeting international quality and export compliance standards.',
       color: 'text-yellow-400',
     },
     {
