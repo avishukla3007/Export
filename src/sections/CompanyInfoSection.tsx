@@ -36,9 +36,9 @@ export default function CompanyInfoSection() {
     },
     {
       icon: Zap,
-      title: 'Fast Turnaround',
-      description: 'Quick order processing and efficient export logistics - 7-14 days typical.',
-      stat: '7-14 Days',
+      title: 'Professional Processing',
+      description: 'Efficient order processing with dedicated export team support.',
+      stat: 'On Request',
     },
   ]
 

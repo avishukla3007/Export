@@ -11,6 +11,7 @@ import BuyerBenefitsSection from './sections/BuyerBenefitsSection'
 import ContactSection from './sections/ContactSection'
 import Footer from './components/Footer'
 import LoadingAnimation from './components/LoadingAnimation'
+import FloatingLogo from './components/FloatingLogo'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-dark">
       <Navbar />
+      <FloatingLogo />
       <HeroSection />
       <AboutSection />
       <ProductsSection />

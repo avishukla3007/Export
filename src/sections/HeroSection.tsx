@@ -52,22 +52,6 @@ export default function HeroSection() {
       </div>
 
       <div className="section-container flex flex-col items-center text-center relative z-10">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 md:mb-12"
-        >
-          <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/50">
-              <span className="text-white font-bold text-xl">V&C</span>
-            </div>
-            <span className="text-xl font-bold text-white">Vantage & Company</span>
-          </div>
-          <p className="text-blue-400 text-sm mt-2 font-medium">Premium Export Solutions</p>
-        </motion.div>
-
         {/* Subheading with export business focus */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -97,7 +81,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-300 max-w-3xl mb-8 md:mb-12 leading-relaxed"
         >
-          Global export solutions for experienced international buyers. Certified agricultural products delivered across 50+ countries with fast shipping and transparent pricing.
+          Premium spices, herbal, and nutraceutical export services. Professional sourcing, quality assurance, and reliable export processing for international buyers.
         </motion.p>
 
         {/* CTA Buttons */}
