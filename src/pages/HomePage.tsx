@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import HeroSection from '../sections/HeroSection'
 import AboutSection from '../sections/AboutSection'
 import ProductsSection from '../sections/ProductsSection'
