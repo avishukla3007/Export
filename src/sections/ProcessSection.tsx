@@ -156,13 +156,13 @@ export default function ProcessSection() {
         transition={{ delay: 0.6 }}
         className="mt-16 text-center relative z-10"
       >
-        <p className="text-gray-300 mb-6">Ready to place your order?</p>
+        <p className="text-gray-300 mb-6">Ready to get in touch?</p>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="button-primary"
         >
-          Place Your Order
+          Contact Us
         </motion.button>
       </motion.div>
     </SectionWrapper>

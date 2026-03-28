@@ -27,18 +27,22 @@ export default function Navbar() {
       <div className="section-container flex justify-between items-center h-16 md:h-20">
         {/* Logo */}
         <motion.div
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.1 }}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg overflow-hidden flex items-center justify-center border border-blue-400/30">
+          <motion.div 
+            animate={{ boxShadow: ['0 0 20px rgba(59, 130, 246, 0.3)', '0 0 40px rgba(59, 130, 246, 0.5)', '0 0 20px rgba(59, 130, 246, 0.3)'] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-12 h-12 md:w-20 md:h-20 rounded-lg overflow-hidden flex items-center justify-center border border-blue-400/30 shadow-lg backdrop-blur-sm"
+          >
             <img 
               src="https://cdn.gamma.app/q6jph620zp1encj/generated-images/CJAV7oUPxu95_moOJCXcJ.png" 
               alt="Vantage & Company Logo"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
           <div className="hidden sm:block">
-            <h1 className="text-lg md:text-xl font-bold text-white">Vantage</h1>
+            <h1 className="text-lg md:text-2xl font-bold text-white">Vantage</h1>
             <p className="text-xs text-gray-300">& Company</p>
           </div>
         </motion.div>
@@ -66,7 +70,7 @@ export default function Navbar() {
           onClick={() => scrollToSection('contact')}
           className="hidden sm:block button-primary"
         >
-          Place Your Order
+          Contact Us
         </motion.button>
 
         {/* Mobile Menu Button */}
@@ -103,7 +107,7 @@ export default function Navbar() {
               onClick={() => scrollToSection('contact')}
               className="w-full button-primary"
             >
-              Place Your Order
+              Contact Us
             </motion.button>
           </div>
         </motion.div>

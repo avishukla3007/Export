@@ -116,7 +116,7 @@ export default function BuyerBenefitsSection() {
         transition={{ delay: 0.6 }}
         className="glass-effect p-8 md:p-12 rounded-2xl text-center"
       >
-        <h3 className="text-2xl font-bold text-white mb-4">Ready to Place Your Order?</h3>
+        <h3 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
         <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
           Contact us now to discuss your product requirements, bulk ordering options, and customize your shipment.
         </p>
@@ -126,7 +126,7 @@ export default function BuyerBenefitsSection() {
           onClick={() => scrollToSection('contact')}
           className="button-primary"
         >
-          Place Your Order
+          Contact Us
         </motion.button>
       </motion.div>
 
@@ -138,9 +138,9 @@ export default function BuyerBenefitsSection() {
         className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
       >
         {[
-          { stat: '500+', label: 'Active Buyers' },
-          { stat: '50+', label: 'Countries Worldwide' },
-          { stat: '10,000+', label: 'Orders Delivered' },
+          { stat: '100%', label: 'Quality Certified' },
+          { stat: 'Non-GMO', label: 'All Products' },
+          { stat: '30-Day', label: 'Money Back Guarantee' },
         ].map((item, idx) => (
           <motion.div
             key={idx}

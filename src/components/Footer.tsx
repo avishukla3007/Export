@@ -109,7 +109,7 @@ export default function Footer() {
             whileHover={{ scale: 1.05 }}
             className="button-primary"
           >
-            Place Your Order
+            Contact Us
           </motion.button>
         </motion.div>
 

@@ -97,7 +97,7 @@ export default function HeroSection() {
             onClick={() => scrollToSection('contact')}
             className="button-primary"
           >
-            Place Your Order
+            Contact Us
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
