@@ -101,8 +101,8 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+91 - Contact for details',
-      link: 'tel:+91...',
+      value: '+91 9140461003',
+      link: 'tel:+919140461003',
     },
     {
       icon: MapPin,
