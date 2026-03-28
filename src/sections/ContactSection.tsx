@@ -63,16 +63,29 @@ export default function ContactSection() {
     setIsLoading(true)
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-      setIsSubmitted(true)
-      setFormData({ name: '', email: '', company: '', message: '' })
+      const data = await response.json()
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000)
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({ name: '', email: '', company: '', message: '' })
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000)
+      } else {
+        console.error('Form submission error:', data.error)
+        setErrors({ message: data.error || 'Failed to send email' })
+      }
     } catch (error) {
       console.error('Error submitting form:', error)
+      setErrors({ message: 'Failed to send email. Please try again.' })
     } finally {
       setIsLoading(false)
     }
