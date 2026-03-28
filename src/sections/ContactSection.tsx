@@ -100,7 +100,7 @@ export default function ContactSection() {
   ]
 
   return (
-    <SectionWrapper id="contact" className="bg-gradient-to-b from-slate-900/30 to-slate-800/50 relative overflow-hidden">
+    <SectionWrapper id="contact" className="contact-section-bg bg-gradient-to-b from-slate-900/30 to-slate-800/50 relative overflow-hidden">
       {/* Export business background with order/shipping theme */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-0">
         <motion.div

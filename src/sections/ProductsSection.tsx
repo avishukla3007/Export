@@ -32,7 +32,7 @@ export default function ProductsSection() {
   ]
 
   return (
-    <SectionWrapper id="products" className="bg-slate-900/50 relative overflow-hidden cargo-section">
+    <SectionWrapper id="products" className="products-section-bg bg-slate-900/50 relative overflow-hidden cargo-section">
       {/* Export business background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-0">
         {/* Subtle shipping pattern */}

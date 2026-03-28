@@ -35,7 +35,7 @@ export default function ProcessSection() {
   ]
 
   return (
-    <SectionWrapper id="process" className="bg-slate-900/50 relative overflow-hidden">
+    <SectionWrapper id="process" className="process-section-bg bg-slate-900/50 relative overflow-hidden">
       {/* Export business background shipping imagery */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-0">
         <motion.div
