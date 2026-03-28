@@ -30,8 +30,12 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg md:text-xl">V</span>
+          <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg overflow-hidden flex items-center justify-center border border-blue-400/30">
+            <img 
+              src="https://cdn.gamma.app/q6jph620zp1encj/generated-images/AgNBG51bmwgH468iSPL4b.png" 
+              alt="Vantage & Company Logo"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="hidden sm:block">
             <h1 className="text-lg md:text-xl font-bold text-white">Vantage</h1>
