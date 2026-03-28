@@ -32,7 +32,7 @@ export default function Navbar() {
         >
           <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg overflow-hidden flex items-center justify-center border border-blue-400/30">
             <img 
-              src="https://cdn.gamma.app/q6jph620zp1encj/generated-images/AgNBG51bmwgH468iSPL4b.png" 
+              src="https://cdn.gamma.app/q6jph620zp1encj/generated-images/CJAV7oUPxu95_moOJCXcJ.png" 
               alt="Vantage & Company Logo"
               className="w-full h-full object-cover"
             />

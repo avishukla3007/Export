@@ -21,10 +21,10 @@ export default function FloatingLogo() {
       <motion.div
         animate={{ boxShadow: ['0 0 20px rgba(59, 130, 246, 0.3)', '0 0 40px rgba(59, 130, 246, 0.5)', '0 0 20px rgba(59, 130, 246, 0.3)'] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-blue-400/30 overflow-hidden"
+        className="w-24 h-24 bg-white/10 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-blue-400/30 overflow-hidden"
       >
         <img 
-          src="https://cdn.gamma.app/q6jph620zp1encj/generated-images/AgNBG51bmwgH468iSPL4b.png" 
+          src="https://cdn.gamma.app/q6jph620zp1encj/generated-images/CJAV7oUPxu95_moOJCXcJ.png" 
           alt="Vantage & Company Logo"
           className="w-full h-full object-cover"
         />
