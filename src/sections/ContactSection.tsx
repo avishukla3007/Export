@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, MessageCircle, AlertCircle } from 'lucide-react'
 import SectionWrapper from '../components/SectionWrapper'
-import API_BASE_URL from '../config/api'
 
 interface FormData {
   name: string
@@ -55,46 +54,17 @@ export default function ContactSection() {
     }
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     if (!validateForm()) {
+      e.preventDefault()
       return
     }
 
     setIsLoading(true)
     setSubmissionError('')
 
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        setIsSubmitted(true)
-        setFormData({ name: '', email: '', company: '', message: '' })
-        setErrors({})
-
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSubmitted(false), 5000)
-      } else {
-        const errorMsg = data.error || 'Failed to send inquiry. Please try again.'
-        console.error('Form submission error:', errorMsg)
-        setSubmissionError(errorMsg)
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error)
-      const errorMsg = error instanceof Error ? error.message : 'Failed to connect to server. Please start the backend server or contact support.'
-      setSubmissionError(errorMsg)
-    } finally {
-      setIsLoading(false)
-    }
+    // FormSubmit will handle the form submission automatically
+    // We just need to let it proceed
   }
 
   const contactMethods = [
@@ -189,7 +159,12 @@ export default function ContactSection() {
         transition={{ delay: 0.3 }}
         className="glass-effect p-8 md:p-12 rounded-2xl max-w-2xl mx-auto relative z-10"
       >
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form 
+          onSubmit={handleSubmit}
+          action="https://formsubmit.co/info@vantageandcompany.com"
+          method="POST"
+          className="space-y-6"
+        >
           {/* Name */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -301,6 +276,11 @@ export default function ContactSection() {
               </motion.p>
             )}
           </motion.div>
+
+          {/* FormSubmit Configuration */}
+          <input type="hidden" name="_subject" value="New Order Inquiry from Vantage & Company" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting Vantage & Company! We received your inquiry and will respond within 24 hours." />
 
           {/* Submission Error */}
           {submissionError && (
