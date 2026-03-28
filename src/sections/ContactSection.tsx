@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, MessageCircle, AlertCircle } from 'lucide-react'
 import SectionWrapper from '../components/SectionWrapper'
+import API_BASE_URL from '../config/api'
 
 interface FormData {
   name: string
@@ -18,6 +19,7 @@ export default function ContactSection() {
     message: '',
   })
   const [errors, setErrors] = useState<Partial<FormData>>({})
+  const [submissionError, setSubmissionError] = useState<string>('')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -61,9 +63,10 @@ export default function ContactSection() {
     }
 
     setIsLoading(true)
+    setSubmissionError('')
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,16 +79,19 @@ export default function ContactSection() {
       if (response.ok) {
         setIsSubmitted(true)
         setFormData({ name: '', email: '', company: '', message: '' })
+        setErrors({})
 
         // Reset success message after 5 seconds
         setTimeout(() => setIsSubmitted(false), 5000)
       } else {
-        console.error('Form submission error:', data.error)
-        setErrors({ message: data.error || 'Failed to send email' })
+        const errorMsg = data.error || 'Failed to send inquiry. Please try again.'
+        console.error('Form submission error:', errorMsg)
+        setSubmissionError(errorMsg)
       }
     } catch (error) {
       console.error('Error submitting form:', error)
-      setErrors({ message: 'Failed to send email. Please try again.' })
+      const errorMsg = error instanceof Error ? error.message : 'Failed to connect to server. Please start the backend server or contact support.'
+      setSubmissionError(errorMsg)
     } finally {
       setIsLoading(false)
     }
@@ -295,6 +301,21 @@ export default function ContactSection() {
               </motion.p>
             )}
           </motion.div>
+
+          {/* Submission Error */}
+          {submissionError && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="p-4 bg-red-500/20 border border-red-400/50 rounded-lg flex items-start gap-3"
+            >
+              <AlertCircle size={20} className="text-red-300 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-red-300 font-semibold mb-1">Error Sending Inquiry</p>
+                <p className="text-red-200 text-sm">{submissionError}</p>
+              </div>
+            </motion.div>
+          )}
 
           {/* Success Message */}
           {isSubmitted && (
