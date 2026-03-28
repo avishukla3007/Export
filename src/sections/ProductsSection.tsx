@@ -9,7 +9,7 @@ export default function ProductsSection() {
       id: 1,
       title: 'Premium Spices',
       icon: Package,
-      items: ['Turmeric Powder', 'Cardamom (Green/Black)', 'Cumin Seeds', 'Black Pepper', 'Coriander Seeds', 'Fenugreek Seeds'],
+      items: ['Turmeric Powder (हल्दी)', 'Cardamom - Green/Black (इलायची)', 'Cumin Seeds (जीरा)', 'Black Pepper (काली मिर्च)', 'Coriander Seeds (धनिया)', 'Fenugreek Seeds (मेथी)'],
       description: 'Premium-grade spices from certified suppliers meeting international quality and export compliance standards.',
       color: 'text-yellow-400',
     },
@@ -17,7 +17,7 @@ export default function ProductsSection() {
       id: 2,
       title: 'Herbal & Organic',
       icon: Leaf,
-      items: ['Moringa Powder', 'Neem Powder', 'Isabgol (Psyllium Husk)', 'Ashwagandha', 'Brahmi Extract', 'Tulsi Powder'],
+      items: ['Moringa Powder (सहजन)', 'Neem Powder (नीम)', 'Isabgol - Psyllium Husk (ईसबगोल)', 'Ashwagandha (अश्वगंधा)', 'Brahmi Extract (ब्राह्मी)', 'Tulsi Powder (तुलसी)'],
       description: 'Organic herbal products and plant-based extracts certified for international export with strict testing.',
       color: 'text-green-400',
     },
@@ -25,7 +25,7 @@ export default function ProductsSection() {
       id: 3,
       title: 'Nutraceuticals & Seeds',
       icon: TrendingUp,
-      items: ['Flax Seeds', 'Sesame Seeds', 'Mustard Seeds', 'Chia Seeds', 'Hemp Seeds', 'Spirulina Powder'],
+      items: ['Flax Seeds (अलसी)', 'Sesame Seeds (तिल)', 'Mustard Seeds (सरसों)', 'Chia Seeds (चिया)', 'Hemp Seeds (भांग)', 'Spirulina Powder (स्पिरुलिना)'],
       description: 'Advanced health formulations and nutrient-rich seeds meeting international compliance and safety standards.',
       color: 'text-blue-400',
     },
@@ -113,15 +113,6 @@ export default function ProductsSection() {
                     ))}
                   </ul>
                 </div>
-
-                {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.05, x: 5 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full py-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 hover:from-blue-500/30 hover:to-indigo-500/30 border border-blue-400/30 rounded-lg text-blue-300 font-medium transition-all"
-                >
-                  Request Quote →
-                </motion.button>
               </Card>
             </motion.div>
           )
