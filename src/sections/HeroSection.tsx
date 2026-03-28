@@ -145,7 +145,7 @@ export default function HeroSection() {
           transition={{ delay: 0.6 }}
           className="mt-12 text-gray-400 text-sm md:text-base"
         >
-          ✓ 100% Quality Certified • ✓ 7-14 Day Shipping • ✓ Professional Support
+          ✓ 100% Quality Certified • ✓ Professional Support
         </motion.p>
       </div>
 
