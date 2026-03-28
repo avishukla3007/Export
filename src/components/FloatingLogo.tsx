@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 export default function FloatingLogo() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -14,8 +15,8 @@ export default function FloatingLogo() {
       animate={{ opacity: 1, scale: 1, x: 0, y: [0, -15, 0] }}
       transition={{ duration: 0.8, delay: 1, y: { duration: 3, repeat: Infinity, type: 'easeInOut' } }}
       whileHover={{ scale: 1.15 }}
-      onClick={() => scrollToSection('home')}
-      className="fixed right-6 bottom-24 z-40 cursor-pointer group"
+      onClick={handleClick}
+      className="hidden md:block fixed right-6 bottom-24 z-40 cursor-pointer group"
     >
       {/* Glowing background effect */}
       <motion.div
