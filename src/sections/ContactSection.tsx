@@ -19,7 +19,6 @@ export default function ContactSection() {
   })
   const [errors, setErrors] = useState<Partial<FormData>>({})
   const [submissionError, setSubmissionError] = useState<string>('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const validateForm = (): boolean => {
@@ -294,17 +293,6 @@ export default function ContactSection() {
                 <p className="text-red-300 font-semibold mb-1">Error Sending Inquiry</p>
                 <p className="text-red-200 text-sm">{submissionError}</p>
               </div>
-            </motion.div>
-          )}
-
-          {/* Success Message */}
-          {isSubmitted && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="p-4 bg-green-500/20 border border-green-400/50 rounded-lg text-green-300"
-            >
-              ✓ Thank you! We've received your inquiry and will contact you shortly with pricing and availability details.
             </motion.div>
           )}
 
