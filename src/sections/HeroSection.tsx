@@ -1,13 +1,9 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, Globe, Truck, Award } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 export default function HeroSection() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+  const navigate = useNavigate()
 
   return (
     <section
@@ -94,7 +90,7 @@ export default function HeroSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => scrollToSection('contact')}
+            onClick={() => navigate('/contact')}
             className="button-primary"
           >
             Contact Us

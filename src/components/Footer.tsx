@@ -1,7 +1,9 @@
 import { Mail, Linkedin, Twitter, Instagram, Globe } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 export default function Footer() {
+  const navigate = useNavigate()
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
@@ -72,16 +74,33 @@ export default function Footer() {
             >
               <h4 className="text-white font-semibold mb-4">{section.title}</h4>
               <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {section.links.map((link) => {
+                  const getPath = (linkName: string) => {
+                    if (linkName === 'Contact') return '/contact'
+                    if (linkName === 'About') return '/about'
+                    return '#'
+                  }
+                  const path = getPath(link)
+                  return (
+                    <li key={link}>
+                      {path === '#' ? (
+                        <a
+                          href="#"
+                          className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                        >
+                          {link}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => navigate(path)}
+                          className="text-gray-400 hover:text-blue-400 transition-colors text-sm bg-transparent border-none cursor-pointer p-0 text-left"
+                        >
+                          {link}
+                        </button>
+                      )}
+                    </li>
+                  )
+                })}
               </ul>
             </motion.div>
           ))}
@@ -107,6 +126,7 @@ export default function Footer() {
           </div>
           <motion.button
             whileHover={{ scale: 1.05 }}
+            onClick={() => navigate('/contact')}
             className="button-primary"
           >
             Contact Us
