@@ -29,6 +29,14 @@ export default function ProductsSection() {
       description: 'Premium-grade spices sourced from certified suppliers. Meeting international quality, food safety, and export compliance standards for demanding global markets.',
       color: 'text-amber-400',
     },
+    {
+      id: 4,
+      title: 'Premium Nutraceuticals',
+      icon: TrendingUp,
+      items: ['Ashwagandha Extract - KSM-66 (अश्वगंधा)', 'Organic Turmeric Curcumin Extract - 95% (हल्दी)', 'Himalayan Shilajit Extract (शिलाजीत)', 'Bacopa Moniera Extract (ब्राह्मी)', 'Triphala Powder - Ayurvedic Blend (त्रिफला)', 'Cordyceps Militaris Extract (कीट कवक)'],
+      description: 'Premium nutraceutical supplements and standardized extracts with clinical research backing. High-demand products in USA, Europe, UAE wellness and health markets with excellent margins.',
+      color: 'text-red-400',
+    },
   ]
 
   return (
