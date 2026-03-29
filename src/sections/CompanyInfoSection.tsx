@@ -117,7 +117,7 @@ export default function CompanyInfoSection() {
           className="glass-effect p-8 md:p-12 rounded-2xl max-w-3xl mx-auto text-center"
         >
           <p className="text-gray-300 text-lg leading-relaxed">
-            When you choose Vantage & Company, you're partnering with an experienced export business that understands international trading, customs compliance, quality standards, and timely delivery. We handle the complexities of global trade so you can focus on growing your business.
+            <span className="text-blue-400 font-semibold">Export Excellence.</span> Vantage & Company specializes in bulk agricultural and nutraceutical exports to global markets. We manage complete export operations—from premium product sourcing and FOB/CIF quotations to documentation, shipping logistics, and customs clearance. Partner with us to access premium Indian products with competitive export pricing, reliable bulk order fulfillment, and seamless international delivery to USA, Europe, UAE, UK, and Asia-Pacific markets.
           </p>
         </motion.div>
       </div>
