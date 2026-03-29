@@ -160,7 +160,7 @@ export default function ContactSection() {
       >
         <form 
           onSubmit={handleSubmit}
-          action="https://formsubmit.co/info@vantageandcompany.com"
+          action="https://formsubmit.co/Vantageandcompany@gmail.com"
           method="POST"
           className="space-y-6"
         >
