@@ -128,13 +128,12 @@ export default function Footer() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <button
-              onClick={() => navigate('/contact')}
-              className="button-primary"
-              type="button"
+            <a
+              href="mailto:Vantageandcompany@gmail.com"
+              className="button-primary inline-block"
             >
               Contact Us
-            </button>
+            </a>
           </motion.div>
         </motion.div>
 
