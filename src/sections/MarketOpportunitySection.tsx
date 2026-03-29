@@ -5,22 +5,22 @@ import SectionWrapper from '../components/SectionWrapper'
 export default function MarketOpportunitySection() {
   const markets = [
     {
-      title: 'Global Spice Market',
+      title: 'Premium Spice Exports',
       value: 314,
       unit: 'B',
-      description: 'Booming demand for premium spices worldwide',
+      description: 'Global demand for certified organic, quality-assured premium spices',
     },
     {
-      title: 'Herbal Products Growth',
+      title: 'Herbal & Wellness Market',
       value: 75,
       unit: '%',
-      description: 'Annual growth rate in herbal supplements',
+      description: 'Strong annual growth in organic herbal supplements and naturals',
     },
     {
-      title: 'Nutraceutical Market',
+      title: 'Nutraceutical Excellence',
       value: 778,
       unit: 'B',
-      description: 'Explosive growth in health and wellness sector',
+      description: 'High-margin market for standardized, clinically-backed extracts',
     },
   ]
 
@@ -33,12 +33,12 @@ export default function MarketOpportunitySection() {
         transition={{ duration: 0.5 }}
         className="text-center mb-16"
       >
-        <span className="text-blue-400 font-semibold text-lg">Market Growth</span>
+        <span className="text-blue-400 font-semibold text-lg">Export Markets</span>
         <h2 className="heading-md mt-4 bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent">
-          Explosive Market Opportunities
+          Premium Quality Market Demand
         </h2>
         <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
-          The global demand for premium agricultural products is skyrocketing, creating unprecedented opportunities for growth.
+          International buyers seek premium, certified products with proven quality. Vantage & Company delivers excellence to meet this growing demand in global export markets.
         </p>
       </motion.div>
 
@@ -98,16 +98,16 @@ export default function MarketOpportunitySection() {
         transition={{ delay: 0.4 }}
         className="glass-effect p-8 md:p-12 rounded-2xl max-w-3xl mx-auto"
       >
-        <h3 className="text-2xl font-bold text-white mb-4">Why Now?</h3>
+        <h3 className="text-2xl font-bold text-white mb-4">Our Quality Vision</h3>
         <div className="space-y-4 text-gray-300">
           <p>
-            🌱 <strong>Consumer Shift:</strong> Growing global awareness of health and wellness is driving unprecedented demand for natural, organic products.
+            ✓ <strong>Premium Sourcing:</strong> We source only the finest products from certified organic suppliers, ensuring every shipment meets international quality standards.
           </p>
           <p>
-            🚀 <strong>Export Potential:</strong> India's agricultural sector is primed to dominate international markets with premium quality offerings.
+            ✓ <strong>Quality Assurance:</strong> Every product batch is lab-tested and verified for potency, purity, and compliance before export to global buyers.
           </p>
           <p>
-            💰 <strong>Profit Margins:</strong> Premium products command higher margins, creating lucrative opportunities for strategic partners.
+            ✓ <strong>Strategic Partnerships:</strong> We partner with international distributors seeking premium products backed by complete traceability and quality documentation.
           </p>
         </div>
       </motion.div>
