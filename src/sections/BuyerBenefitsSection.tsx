@@ -140,7 +140,7 @@ export default function BuyerBenefitsSection() {
         {[
           { stat: '100%', label: 'Quality Certified' },
           { stat: 'Non-GMO', label: 'All Products' },
-          { stat: 'ISO 9001', label: 'Certified Export' },
+          { stat: 'Bulk', label: 'Export Ready' },
         ].map((item, idx) => (
           <motion.div
             key={idx}
