@@ -17,7 +17,7 @@ export default function BuyerBenefitsSection() {
     {
       icon: Truck,
       title: 'Reliable Delivery',
-      description: 'Fast, efficient global shipping with real-time tracking and door-to-door delivery options.',
+      description: 'Fast, efficient global shipping with real-time tracking to major ports and distribution centers worldwide.',
     },
     {
       icon: Zap,
