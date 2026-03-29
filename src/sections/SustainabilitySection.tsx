@@ -115,7 +115,7 @@ export default function SustainabilitySection() {
             { stat: 'ISO', label: 'Quality Certified' },
             { stat: 'FSSAI', label: 'Approved' },
             { stat: '100%', label: 'Testing Compliance' },
-            { stat: '50+', label: 'Products Available' },
+            { stat: '4', label: 'Premium Categories' },
           ].map((item, idx) => (
             <motion.div
               key={idx}
