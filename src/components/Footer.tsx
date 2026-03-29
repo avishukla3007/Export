@@ -124,13 +124,18 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <motion.button
+          <motion.div
             whileHover={{ scale: 1.05 }}
-            onClick={() => navigate('/contact')}
-            className="button-primary"
+            whileTap={{ scale: 0.95 }}
           >
-            Contact Us
-          </motion.button>
+            <button
+              onClick={() => navigate('/contact')}
+              className="button-primary"
+              type="button"
+            >
+              Contact Us
+            </button>
+          </motion.div>
         </motion.div>
 
         {/* Founder Details */}
