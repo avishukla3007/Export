@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion'
-import { Package, Leaf, TrendingUp } from 'lucide-react'
+import { Package, Leaf, TrendingUp, ArrowRight } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import Card from '../components/Card'
 import SectionWrapper from '../components/SectionWrapper'
+import { productsDatabase } from '../data/products'
 
 export default function ProductsSection() {
+  const navigate = useNavigate()
+
+  // Map product names to their product IDs
+  const getProductIdByName = (name: string): string => {
+    const product = productsDatabase.find(p => p.name === name)
+    return product?.id || ''
+  }
   const products = [
     {
       id: 1,
@@ -107,18 +116,26 @@ export default function ProductsSection() {
                 <div className="mb-6">
                   <p className="text-blue-400 font-semibold text-sm mb-3">Key Products:</p>
                   <ul className="space-y-2">
-                    {product.items.map((item, itemIdx) => (
-                      <motion.li
-                        key={itemIdx}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + itemIdx * 0.05 }}
-                        className="flex items-center gap-2 text-gray-300 text-sm"
-                      >
-                        <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full" />
-                        {item}
-                      </motion.li>
-                    ))}
+                    {product.items.map((item, itemIdx) => {
+                      const productId = getProductIdByName(item)
+                      return (
+                        <motion.li
+                          key={itemIdx}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.2 + itemIdx * 0.05 }}
+                          whileHover={{ x: 5 }}
+                          onClick={() => productId && navigate(`/product/${productId}`)}
+                          className={`flex items-center gap-2 text-gray-300 text-sm ${productId ? 'cursor-pointer hover:text-blue-300 transition-colors' : ''}`}
+                        >
+                          <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full" />
+                          {item}
+                          {productId && (
+                            <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                          )}
+                        </motion.li>
+                      )
+                    })}
                   </ul>
                 </div>
               </Card>

@@ -7,6 +7,7 @@ import FloatingLogo from './components/FloatingLogo'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import ProductDetailPage from './pages/ProductDetailPage'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/product/:productId" element={<ProductDetailPage />} />
         </Routes>
         <Footer />
       </div>
